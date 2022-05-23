@@ -70,7 +70,7 @@ header {
     align-items: center;
     padding: 0 1rem;
     background-color: white;
-
+    transition: all 300ms linear;
 }
 
 header.transparent {
@@ -101,6 +101,62 @@ header.transparent nav a.active,
 header.transparent nav a:hover {
     color: white;
 }
+
+/* Componente burger */
+
+.burger {
+    position: fixed;
+    top: 1.5rem;
+    left: 1rem;
+    z-index: 20;
+}
+
+.burger .bar {
+    width: 30px;
+    height: 2px;
+    margin: 6px;
+    background-color: #a97c50;
+}
+
+/* Componente aside */
+
+aside {
+    width: 360px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -360px;
+    z-index: 10;
+    background-color: #424242;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 600ms ease-in-out;
+}
+
+aside nav {
+    margin-top: 60px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+aside nav a {
+    padding: 0.5rem 1rem;
+    color:rgba(255, 255, 255, 0.6);
+}
+
+aside nav a.active,
+aside nav a:hover {
+    color: white;
+}
+
+aside p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+}
+
 
 /* Componente Hero */
 
