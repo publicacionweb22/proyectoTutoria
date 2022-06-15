@@ -102,6 +102,17 @@ header.transparent nav a:hover {
     color: white;
 }
 
+@media (max-width: 620px) {
+
+    header {
+        justify-content: flex-end;
+    }
+
+    header nav {
+        display: none;
+    }
+}
+
 /* Componente burger */
 
 .burger {
@@ -109,6 +120,7 @@ header.transparent nav a:hover {
     top: 1.5rem;
     left: 1rem;
     z-index: 20;
+    display: none;
 }
 
 .burger .bar {
@@ -116,6 +128,30 @@ header.transparent nav a:hover {
     height: 2px;
     margin: 6px;
     background-color: #a97c50;
+    transition: all 600ms ease-in-out;
+}
+
+.burger.open .bar {
+    background-color: white;
+}
+
+.burger.open .bar.top {
+    transform: translateY(8px) rotateZ(45deg);
+}
+
+.burger.open .bar.medium {
+    width: 0;
+}
+
+.burger.open .bar.bottom {
+    transform: translateY(-8px) rotateZ(-45deg);
+}
+
+
+@media (max-width: 620px) {
+    .burger {
+        display: block;
+    }
 }
 
 /* Componente aside */
@@ -132,6 +168,10 @@ aside {
     flex-direction: column;
     justify-content: space-between;
     transition: all 600ms ease-in-out;
+}
+
+aside.open {
+    left: 0;
 }
 
 aside nav {
@@ -365,6 +405,27 @@ form.contact input.email {
     background-repeat: no-repeat;
     background-position: 0 9px;
     padding-left: 1.5rem;
+}
+
+form.contact #legal {
+    display: none;
+}
+
+form.contact label {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+form.contact label::before {
+    content: url('../img/square.svg');
+    position: relative;
+    top: 4px;
+    padding-right: 5px;
+}
+
+#legal:checked + label::before {
+    content: url('../img/check-square.svg');
 }
 
 /* Footer */
